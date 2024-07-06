@@ -1,0 +1,98 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Square2(object):
+    def setupUi(self, Square2):
+        Square2.setObjectName("Square2")
+        Square2.resize(500, 300)
+        self.pushButton_2 = QtWidgets.QPushButton(Square2)
+        self.pushButton_2.setGeometry(QtCore.QRect(0, 0, 131, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_2.setFont(font)
+        self.pushButton_2.setStyleSheet("background-color: rgb(255, 170, 0);\n"
+"color: rgb(0, 0, 127);")
+        self.pushButton_2.setFlat(True)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.label = QtWidgets.QLabel(Square2)
+        self.label.setGeometry(QtCore.QRect(100, 50, 281, 20))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(Square2)
+        self.label_2.setGeometry(QtCore.QRect(190, 80, 131, 21))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.lineEdit_2 = QtWidgets.QLineEdit(Square2)
+        self.lineEdit_2.setGeometry(QtCore.QRect(160, 120, 161, 21))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lineEdit_2.setFont(font)
+        self.lineEdit_2.setStyleSheet("border-radius: 10;\n"
+"border: 2px solid #505050;")
+        self.lineEdit_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.pushButton = QtWidgets.QPushButton(Square2)
+        self.pushButton.setGeometry(QtCore.QRect(150, 170, 181, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton.setFont(font)
+        self.pushButton.setStyleSheet("background-color: rgb(0, 255, 127);")
+        self.pushButton.setObjectName("pushButton")
+        self.label_4 = QtWidgets.QLabel(Square2)
+        self.label_4.setGeometry(QtCore.QRect(210, 210, 81, 31))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.label_4.setFont(font)
+        self.label_4.setObjectName("label_4")
+        self.lineEdit_3 = QtWidgets.QLineEdit(Square2)
+        self.lineEdit_3.setGeometry(QtCore.QRect(150, 240, 181, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lineEdit_3.setFont(font)
+        self.lineEdit_3.setStyleSheet("border-radius: 10;\n"
+"border: 2px solid #505050;")
+        self.lineEdit_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_3.setObjectName("lineEdit_3")
+
+        self.retranslateUi(Square2)
+        QtCore.QMetaObject.connectSlotsByName(Square2)
+
+        self.pushButton.clicked.connect(lambda: self.add_functions())
+
+    def retranslateUi(self, Square2):
+        _translate = QtCore.QCoreApplication.translate
+        Square2.setWindowTitle(_translate("Square2", "Вычислить площадь квадрата, если диагональ..."))
+        self.pushButton_2.setText(_translate("Square2", "вернуться назад"))
+        self.label.setText(_translate("Square2", "Впишите значение диагонали"))
+        self.label_2.setText(_translate("Square2", "Диагональ:"))
+        self.pushButton.setText(_translate("Square2", "Дать ответ"))
+        self.label_4.setText(_translate("Square2", "Ответ:"))
+
+    def add_functions(self):
+        input_cut1 = float(self.lineEdit_2.text())
+
+        otvet = input_cut1 * input_cut1 / 2
+
+        self.lineEdit_3.setText(str(otvet))

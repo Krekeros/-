@@ -1,0 +1,98 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Dialog3(object):
+    def setupUi(self, Dialog3):
+        Dialog3.setObjectName("Dialog3")
+        Dialog3.resize(500, 300)
+        self.pushButton_2 = QtWidgets.QPushButton(Dialog3)
+        self.pushButton_2.setGeometry(QtCore.QRect(0, 0, 131, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_2.setFont(font)
+        self.pushButton_2.setStyleSheet("background-color: rgb(255, 170, 0);\n"
+"color: rgb(0, 0, 127);")
+        self.pushButton_2.setFlat(True)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.label = QtWidgets.QLabel(Dialog3)
+        self.label.setGeometry(QtCore.QRect(0, 30, 501, 61))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(15)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.lineEdit_4 = QtWidgets.QLineEdit(Dialog3)
+        self.lineEdit_4.setGeometry(QtCore.QRect(160, 130, 161, 21))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lineEdit_4.setFont(font)
+        self.lineEdit_4.setStyleSheet("border-radius: 10;\n"
+"border: 2px solid #505050;")
+        self.lineEdit_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_4.setObjectName("lineEdit_4")
+        self.label_2 = QtWidgets.QLabel(Dialog3)
+        self.label_2.setGeometry(QtCore.QRect(230, 100, 21, 21))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.pushButton = QtWidgets.QPushButton(Dialog3)
+        self.pushButton.setGeometry(QtCore.QRect(150, 170, 181, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton.setFont(font)
+        self.pushButton.setStyleSheet("background-color: rgb(0, 255, 127);")
+        self.pushButton.setObjectName("pushButton")
+        self.label_4 = QtWidgets.QLabel(Dialog3)
+        self.label_4.setGeometry(QtCore.QRect(200, 210, 81, 31))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.label_4.setFont(font)
+        self.label_4.setObjectName("label_4")
+        self.lineEdit_3 = QtWidgets.QLineEdit(Dialog3)
+        self.lineEdit_3.setGeometry(QtCore.QRect(150, 250, 181, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lineEdit_3.setFont(font)
+        self.lineEdit_3.setStyleSheet("border-radius: 10;\n"
+"border: 2px solid #505050;")
+        self.lineEdit_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_3.setObjectName("lineEdit_3")
+
+        self.retranslateUi(Dialog3)
+        QtCore.QMetaObject.connectSlotsByName(Dialog3)
+
+        self.pushButton.clicked.connect(lambda: self.X())
+
+    def retranslateUi(self, Dialog3):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog3.setWindowTitle(_translate("Dialog3", "Периметр ромба"))
+        self.pushButton_2.setText(_translate("Dialog3", "вернуться назад"))
+        self.label.setText(_translate("Dialog3", "Напишите длину его стороны - X см "))
+        self.label_2.setText(_translate("Dialog3", "X"))
+        self.pushButton.setText(_translate("Dialog3", "Дать ответ"))
+        self.label_4.setText(_translate("Dialog3", "Ответ:"))
+
+    def X(self):
+        X = float(self.lineEdit_4.text())
+
+        otvet = 4 * X
+
+        self.lineEdit_3.setText(str(otvet))
